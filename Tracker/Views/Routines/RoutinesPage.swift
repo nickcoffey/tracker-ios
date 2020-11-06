@@ -11,7 +11,8 @@ struct RoutinesPage: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                Text("Content")
+                RoutinesHeader()
+                    .padding(.top)
                     .navigationBarTitle("Routines")
             }
         }

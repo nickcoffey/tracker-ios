@@ -18,6 +18,10 @@
 		A90F03ED2555A65F00C456C5 /* HistoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F03EC2555A65F00C456C5 /* HistoryPage.swift */; };
 		A90F03F32555A6B500C456C5 /* StartWorkoutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F03F22555A6B500C456C5 /* StartWorkoutPage.swift */; };
 		A90F03F92555A6DA00C456C5 /* StartWorkoutHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F03F82555A6DA00C456C5 /* StartWorkoutHeader.swift */; };
+		A90F049B2555B00D00C456C5 /* RoutinesHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F049A2555B00D00C456C5 /* RoutinesHeader.swift */; };
+		A90F04A82555B6BE00C456C5 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F04A72555B6BE00C456C5 /* LoginPage.swift */; };
+		A90F04B12555BD0600C456C5 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F04B02555BD0600C456C5 /* HomePage.swift */; };
+		A90F04BA2555D14600C456C5 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F04B92555D14600C456C5 /* SessionStore.swift */; };
 		A97C5E4D25547CDE00D288EF /* TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E4C25547CDE00D288EF /* TrackerApp.swift */; };
 		A97C5E4F25547CDE00D288EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E4E25547CDE00D288EF /* ContentView.swift */; };
 		A97C5E5125547CDF00D288EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A97C5E5025547CDF00D288EF /* Assets.xcassets */; };
@@ -58,6 +62,10 @@
 		A90F03EC2555A65F00C456C5 /* HistoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPage.swift; sourceTree = "<group>"; };
 		A90F03F22555A6B500C456C5 /* StartWorkoutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutPage.swift; sourceTree = "<group>"; };
 		A90F03F82555A6DA00C456C5 /* StartWorkoutHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutHeader.swift; sourceTree = "<group>"; };
+		A90F049A2555B00D00C456C5 /* RoutinesHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesHeader.swift; sourceTree = "<group>"; };
+		A90F04A72555B6BE00C456C5 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		A90F04B02555BD0600C456C5 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		A90F04B92555D14600C456C5 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		A97C5E4925547CDE00D288EF /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97C5E4C25547CDE00D288EF /* TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerApp.swift; sourceTree = "<group>"; };
 		A97C5E4E25547CDE00D288EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +139,8 @@
 		A90F03C02555A49800C456C5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A90F04AF2555BCF300C456C5 /* Home */,
+				A90F04A62555B6B100C456C5 /* Login */,
 				A90F03F12555A6A100C456C5 /* StartWorkout */,
 				A90F03EB2555A64E00C456C5 /* History */,
 				A90F03D32555A5BC00C456C5 /* Exercises */,
@@ -144,6 +154,7 @@
 		A90F03C12555A55000C456C5 /* Routines */ = {
 			isa = PBXGroup;
 			children = (
+				A90F04992555AFFE00C456C5 /* Components */,
 				A90F03C22555A56900C456C5 /* RoutinesPage.swift */,
 			);
 			path = Routines;
@@ -207,6 +218,45 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		A90F04992555AFFE00C456C5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A90F049A2555B00D00C456C5 /* RoutinesHeader.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A90F04A22555B24900C456C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A90F04A62555B6B100C456C5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A90F04A72555B6BE00C456C5 /* LoginPage.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A90F04AF2555BCF300C456C5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A90F04B02555BD0600C456C5 /* HomePage.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A90F04B82555D13700C456C5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A90F04B92555D14600C456C5 /* SessionStore.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		A97C5E4025547CDE00D288EF = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +282,8 @@
 		A97C5E4B25547CDE00D288EF /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				A90F04B82555D13700C456C5 /* Repositories */,
+				A90F04A22555B24900C456C5 /* Models */,
 				A90F03E22555A61F00C456C5 /* Components */,
 				A90F03C02555A49800C456C5 /* Views */,
 				A97C5E4C25547CDE00D288EF /* TrackerApp.swift */,
@@ -543,11 +595,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90F049B2555B00D00C456C5 /* RoutinesHeader.swift in Sources */,
 				A90F03E42555A63600C456C5 /* SearchBar.swift in Sources */,
 				A90F03DE2555A5F600C456C5 /* ExercisesHeader.swift in Sources */,
 				A97C5E4F25547CDE00D288EF /* ContentView.swift in Sources */,
+				A90F04A82555B6BE00C456C5 /* LoginPage.swift in Sources */,
 				A90F03F92555A6DA00C456C5 /* StartWorkoutHeader.swift in Sources */,
+				A90F04B12555BD0600C456C5 /* HomePage.swift in Sources */,
 				A90F03ED2555A65F00C456C5 /* HistoryPage.swift in Sources */,
+				A90F04BA2555D14600C456C5 /* SessionStore.swift in Sources */,
 				A90F03C32555A56900C456C5 /* RoutinesPage.swift in Sources */,
 				A90F03CC2555A5A000C456C5 /* ProfilePage.swift in Sources */,
 				A90F03F32555A6B500C456C5 /* StartWorkoutPage.swift in Sources */,
