@@ -18,11 +18,23 @@ class SessionStore: ObservableObject {
         return user
     }
     
-    func signIn(email: String, password: String, completion: @escaping (_ profile: UserProfile?, _ error: Error?) -> Void) {
+    func register(email: String, password: String) {
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("Error registering: \(error)")
+                return
+            }
+            
+            guard let user = result?.user else { return }
+            self.user = user
+            print("User \(user.uid) signed in.")
+        }
+    }
+    
+    func signIn(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 print("Error signing in: \(error)")
-                completion(nil, error)
                 return
             }
             

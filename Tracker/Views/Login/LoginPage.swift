@@ -12,40 +12,32 @@ struct LoginPage: View {
     @State private var email = ""
     @State private var password = ""
     
+    @State private var isRegisterSheetOpen = false
+    
     @EnvironmentObject var session: SessionStore
     
-    func login() {
-        session.signIn(email: email, password: password) { (profile, error) in
-            if let error = error {
-                print("Error when signing up: \(error)")
-                return
-            }
-        }
-    }
-    
-    
-    
     var body: some View {
-        print("Current user: \(Auth.auth().currentUser as Optional)")
-        
-        return VStack {
-            Text("PLEASE LOGIN")
+        VStack {
+            Text("Please Login")
+                .font(.title)
             
-            Form {
-                Section(header: Text("Email")) {
-                    TextField("Please enter your email", text: $email)
-                }
-                Section(header: Text("Password")) {
-                    SecureField("Please enter your password", text: $password)
-                }
-                Button(action: {login()}) {
-                    HStack() {
-                        Spacer()
-                        Text("Submit")
-                        Spacer()
+            LoginForm(login: session.signIn)
+            
+            HStack {
+                Text("Need an account?")
+                Button(action: {isRegisterSheetOpen.toggle()}){
+                    Text("Register here")
+                }.sheet(isPresented: $isRegisterSheetOpen) {
+                    VStack {
+                        Image(systemName: "chevron.compact.down")
+                            .padding(.vertical)
+                        Text("Register")
+                            .font(.title3)
+                        RegisterForm(register: session.register)
                     }
                 }
             }
+            Spacer()
         }
     }
 }

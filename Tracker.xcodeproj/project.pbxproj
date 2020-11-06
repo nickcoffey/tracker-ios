@@ -22,6 +22,8 @@
 		A90F04A82555B6BE00C456C5 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F04A72555B6BE00C456C5 /* LoginPage.swift */; };
 		A90F04B12555BD0600C456C5 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F04B02555BD0600C456C5 /* HomePage.swift */; };
 		A90F04BA2555D14600C456C5 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F04B92555D14600C456C5 /* SessionStore.swift */; };
+		A90F04D32555F84B00C456C5 /* RegisterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F04D22555F84B00C456C5 /* RegisterForm.swift */; };
+		A90F04DB2555FE2900C456C5 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F04DA2555FE2900C456C5 /* LoginForm.swift */; };
 		A97C5E4D25547CDE00D288EF /* TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E4C25547CDE00D288EF /* TrackerApp.swift */; };
 		A97C5E4F25547CDE00D288EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97C5E4E25547CDE00D288EF /* ContentView.swift */; };
 		A97C5E5125547CDF00D288EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A97C5E5025547CDF00D288EF /* Assets.xcassets */; };
@@ -66,6 +68,8 @@
 		A90F04A72555B6BE00C456C5 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		A90F04B02555BD0600C456C5 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		A90F04B92555D14600C456C5 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		A90F04D22555F84B00C456C5 /* RegisterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForm.swift; sourceTree = "<group>"; };
+		A90F04DA2555FE2900C456C5 /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 		A97C5E4925547CDE00D288EF /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97C5E4C25547CDE00D288EF /* TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerApp.swift; sourceTree = "<group>"; };
 		A97C5E4E25547CDE00D288EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 		A90F04A62555B6B100C456C5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A90F04D12555F83B00C456C5 /* Components */,
 				A90F04A72555B6BE00C456C5 /* LoginPage.swift */,
 			);
 			path = Login;
@@ -255,6 +260,15 @@
 				A90F04B92555D14600C456C5 /* SessionStore.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A90F04D12555F83B00C456C5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A90F04D22555F84B00C456C5 /* RegisterForm.swift */,
+				A90F04DA2555FE2900C456C5 /* LoginForm.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A97C5E4025547CDE00D288EF = {
@@ -602,7 +616,9 @@
 				A90F04A82555B6BE00C456C5 /* LoginPage.swift in Sources */,
 				A90F03F92555A6DA00C456C5 /* StartWorkoutHeader.swift in Sources */,
 				A90F04B12555BD0600C456C5 /* HomePage.swift in Sources */,
+				A90F04DB2555FE2900C456C5 /* LoginForm.swift in Sources */,
 				A90F03ED2555A65F00C456C5 /* HistoryPage.swift in Sources */,
+				A90F04D32555F84B00C456C5 /* RegisterForm.swift in Sources */,
 				A90F04BA2555D14600C456C5 /* SessionStore.swift in Sources */,
 				A90F03C32555A56900C456C5 /* RoutinesPage.swift in Sources */,
 				A90F03CC2555A5A000C456C5 /* ProfilePage.swift in Sources */,
