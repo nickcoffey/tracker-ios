@@ -18,8 +18,10 @@ class SessionStore: ObservableObject {
         return user
     }
     
-    func register(email: String, password: String) {
+    func register(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            completion(result, error)
+            
             if let error = error {
                 print("Error registering: \(error)")
                 return
@@ -31,8 +33,10 @@ class SessionStore: ObservableObject {
         }
     }
     
-    func signIn(email: String, password: String) {
+    func signIn(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            completion(result, error)
+            
             if let error = error {
                 print("Error signing in: \(error)")
                 return

@@ -10,16 +10,25 @@ import SwiftUI
 struct LoginForm: View {
     @State private var email = ""
     @State private var password = ""
-    let login: (String, String) -> Void
+    @State private var showAlert = false
+    @State private var alertMessage = "ERROR"
+    
+    @EnvironmentObject var session: SessionStore
     
     func handleSubmit() {
-        login(email, password)
+        session.signIn(email: email, password: password) { (result, error) in
+            if let error = error {
+                alertMessage = error.localizedDescription
+                showAlert = true
+            }
+        }
     }
     
     var body: some View {
         Form {
             Section(header: Text("Email")) {
                 TextField("Please enter your email", text: $email)
+                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
             }
             Section(header: Text("Password")) {
                 SecureField("Please enter your password", text: $password)
@@ -27,9 +36,11 @@ struct LoginForm: View {
             Button(action: {handleSubmit()}) {
                 HStack() {
                     Spacer()
-                    Text("Submit")
+                    Text("Login")
                     Spacer()
                 }
+            }.alert(isPresented: $showAlert) {
+                Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("Okay")))
             }
         }
     }
@@ -37,9 +48,6 @@ struct LoginForm: View {
 
 struct LoginForm_Previews: PreviewProvider {
     static var previews: some View {
-        func login(email: String, password: String) {
-            print(email)
-        }
-        return LoginForm(login: login)
+        LoginForm()
     }
 }

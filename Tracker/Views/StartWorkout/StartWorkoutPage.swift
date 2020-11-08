@@ -9,6 +9,8 @@ import SwiftUI
 import Firebase
 
 struct StartWorkoutPage: View {
+    @State private var showAlert = false
+    
     @EnvironmentObject var session: SessionStore
     
     var body: some View {
@@ -19,8 +21,10 @@ struct StartWorkoutPage: View {
                     .navigationBarTitle("Start Workout")
                 
                 Text("\(session.getUser()?.email ?? "No email") logged in")
-                Button(action: {session.signOut()}) {
+                Button(action: {showAlert = true}) {
                     Text("Logout")
+                }.alert(isPresented: $showAlert) {
+                    Alert(title: Text("Logout?"), message: Text("Are you sure you want to logout?"), primaryButton: .default(Text("Yes"), action: {session.signOut()}), secondaryButton: .cancel(Text("No"), action: {}))
                 }
             }
         }

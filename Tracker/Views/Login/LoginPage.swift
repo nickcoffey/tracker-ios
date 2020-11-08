@@ -14,36 +14,39 @@ struct LoginPage: View {
     
     @State private var isRegisterSheetOpen = false
     
-    @EnvironmentObject var session: SessionStore
-    
     var body: some View {
         VStack {
-            Text("Please Login")
-                .font(.title)
+            Spacer()
             
-            LoginForm(login: session.signIn)
+            Text("Login")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            
+            LoginForm()
+                .frame(height: 275.0)
+            Button(action: {}) {
+                Text("Forgot Password?")
+            }
+            
+            Spacer()
             
             HStack {
                 Text("Need an account?")
                 Button(action: {isRegisterSheetOpen.toggle()}){
                     Text("Register here")
                 }.sheet(isPresented: $isRegisterSheetOpen) {
-                    VStack {
-                        Image(systemName: "chevron.compact.down")
-                            .padding(.vertical)
-                        Text("Register")
-                            .font(.title3)
-                        RegisterForm(register: session.register)
-                    }
+                    RegisterForm(showRegister: $isRegisterSheetOpen)
                 }
             }
-            Spacer()
         }
     }
 }
 
 struct LoginPage_Previews: PreviewProvider {
     static var previews: some View {
-        LoginPage()
+        let session = SessionStore(user: nil)
+        return LoginPage()
+            //            .environment(\.colorScheme, .dark)
+            .environmentObject(session)
     }
 }
